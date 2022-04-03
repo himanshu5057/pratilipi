@@ -4,10 +4,11 @@ import express, { json } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
+import user from "./routes/user.js";
 // connectdb.connect();
 import connectDB from "./configs/database.js";
 import axios from "axios";
-axios.defaults.baseURL=process.env.AXIOS_URL;
+axios.defaults.baseURL = process.env.AXIOS_URL;
 
 connectDB();
 const __dirname = path.resolve();
@@ -39,7 +40,6 @@ app.use((req, res, next) => {
 app.use(json());
 app.use(helmet());
 app.use(morgan("common"));
-import user from "./routes/user.js";
 app.use("/user", user);
 const PORT = process.env.PORT || 3000;
 
