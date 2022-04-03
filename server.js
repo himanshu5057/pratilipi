@@ -7,7 +7,7 @@ import path from "path";
 // connectdb.connect();
 import connectDB from "./configs/database.js";
 import axios from "axios";
-axios.defaults.baseURL="http://localhost:5000/series/";
+axios.defaults.baseURL=process.env.AXIOS_URL;
 
 connectDB();
 const __dirname = path.resolve();

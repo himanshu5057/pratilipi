@@ -99,11 +99,11 @@ export const unlockOneChapter = async (req, res) => {
       seriesId: req.body.seriesId,
       userId: req.body.userId,
     });
-    console.log(data);
+    // console.log(data);
     if (data.success == true)
       return res.json({
         success: true,
-        result:"Updated successfully"
+        result:data.result
       });
     else{
       return res.json({
